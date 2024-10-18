@@ -4,8 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import MobileMenu from "./mobileMenu";
 import { usePathname } from "next/navigation";
-import { Button } from "../ui/button";
-// import { ConnectKitButton } from 'connectkit';
+import { ConnectKitButton } from "connectkit";
 
 export type MenuItemType = {
   displayText: string;
@@ -69,8 +68,7 @@ export default function Navbar() {
           </nav>
         </div>
         <div className="hidden lg:flex lg:justify-end">
-          {/* <ConnectKitButton /> */}
-          <Button>ConnectKit</Button>
+          <ConnectKitButton />
         </div>
         <MobileMenu menuItems={MENU_ITEMS} pathname={pathname} />
       </div>

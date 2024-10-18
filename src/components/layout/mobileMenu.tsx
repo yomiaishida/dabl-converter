@@ -10,8 +10,7 @@ import {
 } from "@/components/ui/sheet";
 import { MenuIcon } from "lucide-react";
 import { MenuItemType } from "./navbar";
-import { Button } from "../ui/button";
-// import { ConnectKitButton } from 'connectkit';
+import { ConnectKitButton } from "connectkit";
 
 type MobileMenuProps = {
   menuItems?: MenuItemType[];
@@ -46,8 +45,7 @@ export default function MobileMenu({ menuItems, pathname }: MobileMenuProps) {
             </Link>
           ))}
           <div className="flex justify-center py-2">
-            {/* <ConnectKitButton /> */}
-            <Button>ConnetKit</Button>
+            <ConnectKitButton />
           </div>
         </div>
       </SheetContent>
