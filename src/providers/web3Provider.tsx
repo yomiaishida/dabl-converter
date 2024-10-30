@@ -1,7 +1,7 @@
 "use client";
 
 import { WagmiProvider, createConfig, http } from "wagmi";
-import { mainnet, polygonZkEvmCardona } from "wagmi/chains";
+import { polygonZkEvmCardona } from "wagmi/chains";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ConnectKitProvider, getDefaultConfig } from "connectkit";
 import { ReactNode } from "react";
@@ -9,12 +9,12 @@ import { ReactNode } from "react";
 const config = createConfig(
   getDefaultConfig({
     // Your dApps chains
-    chains: [mainnet, polygonZkEvmCardona],
+    chains: [polygonZkEvmCardona],
     transports: {
       // RPC URL for each chain
-      [mainnet.id]: http(
-        `https://eth-mainnet.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_ID}`
-      ),
+      // [mainnet.id]: http(
+      //   `https://eth-mainnet.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_ID}`
+      // ),
       [polygonZkEvmCardona.id]: http(
         `https://polygonzkevm-mainnet.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_ID}`
       ),
@@ -29,8 +29,8 @@ const config = createConfig(
 
     // Optional App Info
     appDescription: "Web3 learning",
-    appUrl: "https://family.co", // your app's url
-    appIcon: "https://family.co/logo.png", // your app's icon, no bigger than 1024x1024px (max. 1MB)
+    appUrl: "https://localhost:3000", // your app's url
+    appIcon: "https://localhost:3000/dablclub-512x512.png", // your app's icon, no bigger than 1024x1024px (max. 1MB)
   })
 );
 
